@@ -4,6 +4,13 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Processor {
+    /**
+     * Takes user input for the order
+     * Processes the entire order
+     * Displays the final order
+     *
+     * @throws Exception error encountered while processing the order
+     */
     public void processInput() throws Exception {
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();
@@ -17,6 +24,7 @@ public class Processor {
                 .mapToInt(Integer::parseInt)
                 .toArray();
 
+        // Process the input
         OrderingMenu menu = new OrderingMenuImpl().getOrderingMenu(FoodTypes.getFoodType(foodType));
         menu.processOrder(orders);
         menu.validateOrder();

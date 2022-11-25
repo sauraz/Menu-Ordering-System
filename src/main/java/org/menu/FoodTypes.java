@@ -5,6 +5,11 @@ public enum FoodTypes {
     LUNCH,
     DINNER;
 
+    /**
+     * @param foodType is provided in string
+     * @return an Enum for the corresponding string foodType
+     * @throws Exception if provided stringType does not have a corresponding Enum type
+     */
     public static FoodTypes getFoodType(String foodType) throws Exception {
         if (foodType.toUpperCase().trim().equals(BREAKFAST.toString())) {
             return BREAKFAST;
