@@ -2,13 +2,20 @@
 
 Create a system that takes orders for breakfast, lunch, and dinner.
 
-## Installation
-1. Clone repository from the given github [Repository Link](https://github.com/sauraz/Menu-Ordering-System.git
-   ) or extract zip file.
-2. Change directory to the path of project "cd Menu Ordering System/src/main/java/org/menu".
-3. Generate the Class Files of all java files using the command "javac Main.java".
-4. Execute the program using the command "java Main".
+## Requirements
+- Java 13
 
+## Installation
+1. Clone repository from the given github [Repository Link](https://github.com/sauraz/Menu-Ordering-System.git) or extract zip file.
+2. Change directory to the path of project "cd Menu Ordering System/src/main/java/".
+3. Generate the Class Files of all java files using the command "javac org/menu/Main.java".
+4. Execute the program using the command "java org.menu.Main".
+
+## Run using Docker
+1. Run these steps 
+    -  docker build . -t app
+    -  docker run -i -t app
+    -  Input order here
 
 ### Rules:
 1. An order consists of a meal and collection of comma separated item Ids.

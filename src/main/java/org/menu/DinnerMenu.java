@@ -3,6 +3,7 @@ package org.menu;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class DinnerMenu extends OrderingMenuImpl implements OrderingMenu {
 
@@ -57,7 +58,7 @@ public class DinnerMenu extends OrderingMenuImpl implements OrderingMenu {
         // At dinner, multiple mains cannot be ordered
         List<String> mainDish = this.orderedMainDishes.entrySet().stream()
                 .filter(entry -> entry.getValue() > 1L)
-                .map(Map.Entry::getKey).toList();
+                .map(Map.Entry::getKey).collect(Collectors.toList());
         if (this.orderedMainDishes.size() > 1 || (mainDish.size() > 0)) {
             throw new Exception(String.format("%s cannot be ordered more than once", mainDish.get(0)));
         }
@@ -66,7 +67,7 @@ public class DinnerMenu extends OrderingMenuImpl implements OrderingMenu {
         // At dinner, multiple sides cannot be ordered
         List<String> sideDish = this.orderedSideDishes.entrySet().stream()
                 .filter(entry -> entry.getValue() > 1L)
-                .map(Map.Entry::getKey).toList();
+                .map(Map.Entry::getKey).collect(Collectors.toList());
         if (this.orderedSideDishes.size() > 1 || (sideDish.size() > 0)) {
             throw new Exception(String.format("%s cannot be ordered more than once", sideDish.get(0)));
         }

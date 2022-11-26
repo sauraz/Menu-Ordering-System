@@ -40,13 +40,13 @@ public class OrderingMenuImpl extends Menu {
     @Override
     public OrderingMenu getOrderingMenu(FoodTypes foodType) throws Exception {
         switch (foodType) {
-            case BREAKFAST -> {
+            case BREAKFAST: {
                 return new BreakfastMenu();
             }
-            case LUNCH -> {
+            case LUNCH: {
                 return new LunchMenu();
             }
-            case DINNER -> {
+            case DINNER: {
                 return new DinnerMenu();
             }
         }
@@ -88,10 +88,22 @@ public class OrderingMenuImpl extends Menu {
         for (Map.Entry<Integer, Integer> e : mapDishIdCount.entrySet()) {
             String res = this.menu.get(e.getKey());
             switch (this.getDishType(e.getKey())) {
-                case MAIN -> orderedMainDishes.put(res, e.getValue());
-                case SIDE -> orderedSideDishes.put(res, e.getValue());
-                case DRINK -> orderedDrinks.put(res, e.getValue());
-                case DESSERT -> orderedDesserts.put(res, e.getValue());
+                case MAIN: {
+                    orderedMainDishes.put(res, e.getValue());
+                    break;
+                }
+                case SIDE: {
+                    orderedSideDishes.put(res, e.getValue());
+                    break;
+                }
+                case DRINK: {
+                    orderedDrinks.put(res, e.getValue());
+                    break;
+                }
+                case DESSERT: {
+                    orderedDesserts.put(res, e.getValue());
+                    break;
+                }
             }
         }
     }
