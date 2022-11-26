@@ -10,6 +10,23 @@ public class OrderingMenuImpl extends Menu {
     Map<Integer, String> sideDishes;
     Map<Integer, String> drinks;
     Map<Integer, String> desserts;
+
+    public Map<String, Integer> getOrderedMainDishes() {
+        return orderedMainDishes;
+    }
+
+    public Map<String, Integer> getOrderedSideDishes() {
+        return orderedSideDishes;
+    }
+
+    public Map<String, Integer> getOrderedDrinks() {
+        return orderedDrinks;
+    }
+
+    public Map<String, Integer> getOrderedDesserts() {
+        return orderedDesserts;
+    }
+
     Map<String, Integer> orderedMainDishes;
     Map<String, Integer> orderedSideDishes;
     Map<String, Integer> orderedDrinks;
