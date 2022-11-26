@@ -151,7 +151,7 @@ public class OrderingMenuImpl extends Menu {
      * @param orders contains the list of ordered items in integer
      * @return map of count of each item ordered
      */
-    public Map<Integer, Integer> getCountOfEachDish(int[] orders) {
+    public Map<Integer, Integer> getCountOfEachDish(int[] orders) throws Exception {
         Map<Integer, Integer> mapDishIdCount = new HashMap<>();
         for (int order : orders) {
             if (this.menu.containsKey(order)) {
@@ -159,6 +159,8 @@ public class OrderingMenuImpl extends Menu {
                     mapDishIdCount.put(order, mapDishIdCount.get(order) + 1);
                 else
                     mapDishIdCount.put(order, 1);
+            } else {
+                throw new Exception(String.format("Item %d not present on menu", order));
             }
         }
         return mapDishIdCount;
